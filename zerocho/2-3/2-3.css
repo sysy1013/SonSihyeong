@@ -1,0 +1,21 @@
+/*선택자(selector)*/
+#header-center {
+  margin: 0 auto;
+  width: 1080px;
+}
+#header-search > h1 {
+  width: 280px;
+  display: inline-block;
+} /*꺽는부호를 사용하여 부모자식을 표현 display : block을 inline 블록으로 바꿈으로써 검색창이 옆으로 오게 만듬*/
+
+#header-center h2 {
+  display: none;
+} /*보이지 않게 하는기능, display : block일 경우 바로 옆으로 이동하지않는다.*/
+
+#header-search fieldset {
+  width: 520px;
+  display: inline-block;
+}
+/*#header-center h1{
+  자손 선택자 보통은 자손 선택을 많이한다.
+} 자손은 그냥 띄어쓰기 해서 사용한다*/
