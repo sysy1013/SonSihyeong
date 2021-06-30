@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+} /*브라우저가 주는 margin 과 padding을 0으로 만들어준다*/
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  display: none;
+}
+
+#header-center {
+  margin: 0 auto;
+  width: 1080px;
+}
+#header-search h1 {
+  width: 198px;
+  height: 48px;
+  display: inline-block;
+  background: url(./sp_search.png) -4px -12px no-repeat;
+  vertical-align: middle;
+  position: relative;
+  top: -17px;
+}
+#header-search h1 span {
+  display: none;
+}
+
+#header-search fieldset {
+  margin-left: 20px;
+  padding: 12px 0 12px 10px;
+  border: 2px solid #03cf5d;
+  width: 521px;
+  height: 49px;
+  display: inline-block;
+  position: relative;
+}
+
+#header-search fieldset input {
+  width: 405px;
+  height: 23px;
+  border: none;
+  padding: 0;
+  outline: none;
+  vertical-align: top;
+}
+
+#header-search fieldset button {
+  width: 49px;
+  height: 49px;
+  border: none;
+  padding: 0;
+  background: #03cf5d;
+  position: absolute;
+  right: -2px;
+  top: -2px;
+}
+
+#search-image {
+  background-image: url(./sp_search.png);
+  background-position: -3px -60px;
+  background-repeat: no-repeat;
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+  margin: 14px;
+}
+
+.fixed {
+  position: fixed; /*fixed도 absolute와 마찬가지로 컨테이닝 박스에 따라 움직인다 absolute와 다른점은 fixed의 컨테이닝 박스는 뷰포트 즉 화면전체이다*/
+  top: 50px;
+  left: 50px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 50px; /*해당 기능 사용시 테두리가 둥그렇게 변한다!*/
+}
