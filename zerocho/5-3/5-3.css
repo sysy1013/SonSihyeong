@@ -15,7 +15,9 @@ body {
   height: 1px;
   display: none;
 }
-
+.relative {
+  position: relative;
+}
 .center-align {
   margin: 0 auto;
   width: 1080px;
@@ -31,6 +33,9 @@ body {
 }
 #header-top {
   float: right;
+  margin-top: 8px;
+}
+#header-top span {
   color: #888; /*같은 숫자 6개이면 2개씩 묶어서 3개짜리로 만들수있다.*/
   letter-spacing: -1px; /*자간을 나타낸다*/
   font-size: 11px;
@@ -38,7 +43,10 @@ body {
 }
 #header-search {
   clear: both;
+  padding-top: 12px;
 }
+/*margin은 외부 padding은 내부
+margin이 겹쳐서 안나올때가 있으니 padding 으로 하는것이 안전하다.*/
 
 #header-search h1 span {
   display: none;
@@ -101,14 +109,25 @@ header {
 
 nav ul {
   margin: 0;
-  padding: 0;
+  padding: 16px 0 4px;
   list-style: none;
+}
+nav {
+  height: 46px;
+  border-top: 1px solid #f1f3f6;
+  border-bottom: 1px solid #d1d8e4;
 }
 
 nav li {
   display: inline-block;
 }
-
+.nav-divider {
+  display: inline-block;
+  margin: 18px 16px 0;
+  width: 1px;
+  height: 14px;
+  background: #ebeef3;
+}
 nav li span:first-child {
   background-repeat: no-repeat;
   display: inline-block;
@@ -143,4 +162,16 @@ nav li:nth-child(5) span:first-child {
 nav li:nth-child(6) span:first-child {
   width: 25px;
   background-position: -70px -285px;
+}
+
+.search-ranking {
+  position: absolute;
+  top: 16px;
+  right: 30px;
+}
+
+.rank-number {
+  margin-top: -9px;
+  color: #00ab33;
+  font-size: 16px;
 }
