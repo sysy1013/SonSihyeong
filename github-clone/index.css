@@ -30,6 +30,21 @@ body {
   margin-left: 50px;
 }
 
+#search-menu ul {
+  display: none;
+  list-style: none;
+  padding: 17px;
+  margin: 0;
+  width: 332px;
+  height: 334px;
+  border: 1px solid #aaa;
+  background: white;
+  position: absolute;
+  top: -15px;
+  right: 0;
+  z-index: 100;
+}
+
 .center-align {
   margin: 0 auto;
   width: 1400px;
