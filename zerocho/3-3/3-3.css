@@ -1,0 +1,44 @@
+/*선택자(selector)*/
+* {
+  box-sizing: border-box;
+} /* *은 모든 태그를 의미한다. */
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  display: none;
+}
+
+#header-center {
+  margin: 0 auto;
+  width: 1080px;
+}
+#header-search h1 {
+  width: 198px;
+  height: 48px;
+  display: inline-block;
+  background: url(./sp_search.png) -4px -12px no-repeat;
+}
+#header-search h1 span {
+  display: none;
+}
+
+#header-search fieldset {
+  margin-left: 20px;
+  padding: 12px 0 12px 10px;
+  border: 2px solid #03cf5d; /*hex표기법 구글에 hexcolor검색후 찾는다*/
+  width: 521px;
+  height: 48px;
+  display: inline-block;
+  /*box-sizing: border-box;*/ /*해당 기능을 사용하면 padding 과 border를 합친 값이 width와 height들어가게 해주는 기능이다.*/
+}
+
+#header-search fieldset input {
+  border: none;
+  padding: 0;
+  outline: none; /*테두리를 없애는 기능*/
+  vertical-align: middle; /*형제 태그끼리 서로 높낮이가 맞지않을때*/
+} /*테두리를 지우는 기능*/

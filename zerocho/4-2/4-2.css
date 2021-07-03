@@ -1,0 +1,73 @@
+/*정리하자면 postion : realtive 는 자신의 현재 위치를 기반으로 움직임을 결정하는것이고
+postion : absolute는 컨테이닝 박스를 기준으로 움직인다.*/
+* {
+  box-sizing: border-box;
+} /* *은 모든 태그를 의미한다. */
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  display: none;
+}
+
+#header-center {
+  margin: 0 auto;
+  width: 1080px;
+}
+#header-search h1 {
+  width: 198px;
+  height: 48px;
+  display: inline-block;
+  background: url(./sp_search.png) -4px -12px no-repeat;
+  vertical-align: middle;
+  position: relative; /*자신의 위치를 기반하여 상대적으로 하기위해서 설정하는것*/
+  top: -17px;
+}
+#header-search h1 span {
+  display: none;
+}
+
+#header-search fieldset {
+  margin-left: 20px;
+  padding: 12px 0 12px 10px;
+  border: 2px solid #03cf5d;
+  width: 521px;
+  height: 49px;
+  display: inline-block;
+  position: relative;
+}
+
+#header-search fieldset input {
+  width: 405px;
+  height: 23px;
+  border: none;
+  padding: 0;
+  outline: none;
+  vertical-align: top;
+}
+
+#header-search fieldset button {
+  width: 49px;
+  height: 49px;
+  border: none;
+  padding: 0;
+  background: #03cf5d;
+  position: absolute; /*화면을 기준으로 설정하는것 >부모가 static인지 아니면 position으로 지정이된건지 확인하기 위해 지속적으로 올라가면서 확인한다.
+  해당 코드의 경우 fieldset에 붙이고 싶은것이니 fieldset을 position이 static이 아닌 relative로 설정을 해주면 컨테이닝 블록으로 인식하여 붙게된다!*/
+  right: -2px;
+  top: -2px;
+}
+/*block format context에 대하여 알면 좋다*/
+
+#search-image {
+  background-image: url(./sp_search.png);
+  background-position: -3px -60px;
+  background-repeat: no-repeat;
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+  margin: 14px;
+}

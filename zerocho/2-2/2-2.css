@@ -1,0 +1,5 @@
+/*선택자(selector)*/
+#header-center {
+  margin: 0 auto;
+  width: 1080px;
+} /*div만 #앞에 생략이 가능하다*/
