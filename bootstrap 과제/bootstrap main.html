@@ -12,26 +12,46 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
     <style>
-        body{
+        html{
             overflow:scroll ;
+            scroll-behavior: smooth;
         }
+        
     </style>
 </head>
-<body>
+<body>    
     <header>
-        <nav class="d-flex bg-dark align-items-center p-2 navbar fixed-top">
-            <div style="font-size: 1.25rem ;" class ="ml-2 text-white font-weight-bold">Pirogramming15</div>
-            <div class="text-info ml-5 mr-5">Son Si Hyeong</div>
-            <a href="" class="text-white text-decoration-none ml-5">Intro</a>
-            <a href=""class="text-white text-decoration-none ml-4">Highlights</a>
-            <a href="" class="text-white text-decoration-none ml-4">Gallery</a>
-            <a href="" class="text-white text-decoration-none ml-4">Contact</a>
-            <button type="button" class= " btn btn-transparent ml-auto text-info border-1 border border-info ">About</button>
-        </nav>
+      <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark ">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav_drop_down_menu"  data-bs-target="#logo"aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="d-flex justify-content-between align-items-center">
+          <a id="logo" class="navbar-brand collapse navbar-collapse" href="#">Pirogramming 15</a>
+            <span class="text-info ml-3 mr-5">Son Si Hyeong</span>
+              <div id="nav_drop_down_menu" class="collapse navbar-collapse ml-3">
+                  <ul class="navbar-nav">
+                      <li class="nav-item active">
+                          <a class="nav-link" href="#Intro">Intro<span class="text-white"></span></a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#Highlights">Highlights</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#Gallery">Gallery</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#Contact">Contact</a>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+            <button type="button" class="btn btn-outline-info  ml-auto border-1 border border-info ">About</button>
+        </div>
+    </nav>
     </header>
     <main>
         <!--Intro page-->
-        <div class="d-flex flex-column justify-content-center align-items-center vh-100">
+        <div id="Intro" class="d-flex flex-column justify-content-center align-items-center vh-100">
             <div style="font-size :3rem;"class="font-weight-bold">Pirogramming 15</div>
             <div style="font-size :1.5rem;" class="p-3 font-weight-bold ">Cheer up</div>
             <div style="border:0.1px solid #f0f0f0" class="w-75 mb-3"></div>
@@ -39,14 +59,14 @@
         </div>
 
         <!--Highlights page-->
-        <div style="height:75vh" class="d-flex flex-column justify-content-center align-items-center bg-secondary">
+        <div id="Highlights" style="height:75vh" class="d-flex flex-column justify-content-center align-items-center bg-secondary">
             <div style="font-size :3rem;"class="font-weight-bold text-danger">Built On The Bootsrap Grid</div>
             <div style="font-size :1.25rem;" class="p-3 font-weight-bold w-50 text-center text-white">bootstrap's responsive grid comes in 4 sizes or "breakpoints" : tiny(xs), small(sm), medium(md), large(lg). These 4 grid sizes enable you create responsive layouts that be have accrdingly on diffenrent devices.</div>
             <button type="button" class=" btn btn-light text-dark "> Learn More </button>
         </div>
         
         <!--Gallery-->
-        <div style="height:120vh" class="d-flex flex-column justify-content-center align-items-center bg-dark">
+        <div id="Gallery" style="height:120vh" class="d-flex flex-column justify-content-center align-items-center bg-dark">
             <div style="font-size :3rem;"class="font-weight-bold text-primary ">Flexible Layouts</div>
             <div class="row row-cols-3 text-center w-75">
                 <div style="display: flex;
@@ -96,7 +116,7 @@
         </div>
 
         <!--Contact-->
-        <div style="height:75vh" class="d-flex flex-column justify-content-center align-items-center bg-secondary">
+        <div id="Contact" style="height:75vh" class="d-flex flex-column justify-content-center align-items-center bg-secondary">
             <div style="font-size :40px;"class="font-weight-bold text-primary">Get in Touch</div>
             <div class="p-4 text-light">we love feedback, Fill out the form below and we'll get back to you as soon as possible.</div>
             <div class="d-flex w-75 justify-content-center">
@@ -107,18 +127,13 @@
             <div style="width:60vw" class="d-flex flex-column">
                 <textarea style="height: 30vh;" class="rounded border-0" placeholder="Your message here."></textarea>
             </div>
-            <div>
-                <button style="width:20vw" type="button" class= " btn btn-primary mt-4 text-light">Send</button>
-            </div>
-        </div>
-        
-        <!--footer-->
-        
+            <button  style="width:20vw" type="button" data-toggle="modal" data-target="#myModal"class= " btn btn-primary mt-4 text-light">Send</button>
 
     </main>
     
     <footer>
-        <div style="height : 15vw" class="d-flex justify-content-between align-items-end bg-dark text-light">
+        <!--footer-->
+        <div style="height : 15vw" class="d-flex justify-content-between align-items-center bg-dark text-light">
             <div class="ml-5">
                 <div style="font-size: 1.5rem;" class="text-info font-weight-bold">Information</div>
                 <div class="mt-1">Product</div>
@@ -140,6 +155,7 @@
                 <input style="width:30vw" class="rounded border-0 p-2 mt-2" placeholder="Tell us your email" type="text">
                 <div></div>
                 <button style="width:15vw" type="button" class= " btn btn-primary mt-3 text-light">Subscrive for update</button>
+            </div>
         </div>
     </footer>
     
