@@ -18,6 +18,11 @@ while True:
     A_count = num+temp
     total += num
 
+    if total > 31:
+        for i in range(temp, 32):
+            print(f'player A: {i}')
+        break
+
     for i in range(temp, A_count):
         print(f'player A : {i+1}')
     temp = A_count
@@ -35,6 +40,11 @@ while True:
 
     b_count = A_count+num
     total += num
+
+    if total > 31:
+        for i in range(temp, 32):
+            print(f'playerB : {i+1}')
+        break
 
     for i in range(temp, b_count):
         print(f'playerB: {i+1}')
