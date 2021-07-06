@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?1"/> 
+    <link rel="stylesheet" href="./6-1.css"/> 
+    
+</head>
+<body> 
+    <header>
+        <!--<div style="height : 20px; margin-bottom : 30px;"></div>
+        <div style="height : 20px; margin-top : 30px;"></div> 이럴경우 마진 상쇄 height가 있을 경우 형제 -->
+        <!--<div style="height : 20px; margin-bottom : 30px;"></div>
+        <div style="height : 20px; margin-top : 20px;"></div> 한쪽의 margin이 클 경우 잡아먹힌다! -->
+        <!-- 이런 경우를 피하기 위해서는 블록 포맷 컨텍스트를 사용해야한다. 
+        overflow : auto 할 경우 부모와 자식 둘 다 생기지만 스크롤이 생겨서 좋지 않다.
+        overflow : hidden 은 자식이 부모영역을 벗어나서 안보인다.
+        float : left를 사용하고 width : 100% 해주는것이 좋다.
+        치트키로는 display를 inline-block으로 해주고 width 를 100%로 설정을 하면 모든 경우에서 사용이 가능하다!!-->
+    <div class="center-align">
+        <div id="header-top"> 
+            <span>네이버를 시작페이지로 > | </span>
+            <span>쥬니어네이버 | </span>
+            <span>해피빈 | </span>
+        </div>
+            <div id="header-search"> 
+                <a href="https://www.naver.com" style = "text-decoration: none;"> 
+                    <h1>
+                        
+                            <span>네이버</span> 
+                    </h1>
+                </a>
+                <h2 class="blind">검색창</h2> 
+                <fieldset>
+                    <legend class="blind" >검색</legend>
+                    <input />
+                    <span id ="search-keyboard"></span>
+                    <span id ="search-history"></span>
+                    <button>
+                        <span class="blind">검색</span>
+                        <span id="search-image"></span>
+                    </button> 
+                </fieldset>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="enter-align relative">
+            <div id="search-ranking">
+                <h2 class="blind">실시간 검색어</h2>
+                <span id="rank-number">1</span>
+                <span>피로그래밍</span>
+            </div>
+        </div>
+
+        <div class="center-align">
+            <ul> 
+                <li> <a href=""><span></span><span class="blind">메일</span></a></li> 
+                <li> <a href=""><span></span><span class="blind">카페</span></a></li> 
+                <li> <a href=""><span></span><span class="blind">블로그</span></a></li> 
+                <li> <a href=""><span></span><span class="blind">지식인</span></a></li> 
+                <li> <a href=""><span></span><span class="blind">네이버페이</span></a></li> 
+                <li> <a href=""><span></span><span class="blind">네이버쇼핑</span></a></li>
+                <li> <a href=""><span></span><span class="blind">네이버TV</span></a></li>
+                <li> <a href=""><span></span><span class="blind">사전</span></a></li> 
+                <li> <a href=""><span></span><span class="blind">증권</span></a></li> 
+                <li> <a href=""><span></span><span class="blind">부동산</span></a></li> 
+                <li> <a href=""><span></span><span class="blind">지도</span></a></li> 
+                <li> <a href=""><span></span><span class="blind">영화</span></a></li> 
+                <li> <a href=""><span></span><span class="blind">뮤직</span></a></li>
+                <li> <a href=""><span></span><span class="blind">책</span></a></li>
+                <li> <a href=""><span></span><span class="blind">웹툰</span></a></li>
+            </ul>
+            <div class="nav-divider"></div>
+            <ul>
+                <li><a href=""><span></span><span class="blind">더보기</span></a></li>
+            </ul>
+        </div>
+    
+    </nav>
+
+    <main>
+    <h2>실시간 검색어</h2>
+    <h3>뉴스</h3>
+    <ol>
+        <li>확진자 급증 오후 9시까지 756명, 214명↑…30일 800명 안팎(종합)</li>
+        <li>'멈춤 없는' 대전 노래방 종사자·손님 확진…누적 19명 감염(종합)</li>
+        <li>구치소 직원·수용자 코로나19 확진</li>
+        <li>신세계 강남서 확진자 1명 발생…"22∼27일 방문자 검사"</li>
+        <li>尹, 첫 공식행보는 언론사 행사…野지도부와도 조우 전망</li>
+        <li>내년 최저임금 심의 본격화…1만800원 23.9%↑ vs 8천720원 동결(종합2보)</li>
+    </ol>
+    <h3>언론사 목록</h3>
+    <ul>
+        <li><img src="./ohmynews.png" alt="오마이뉴스"></li>
+        <li><img src="./009.png"alt="매일경제"></li>
+        <li><img src="./011.png"alt="서울경제"></li>
+        <li><img src="./014.png"alt="파이낸셜뉴스"></li>
+    </ul>
+
+    <h3>로그인</h3>
+    <h3>뉴스</h3>
+    <h3>법률</h3>
+    <h6>쇼핑</h6>
+    </main>
+
+    <footer>
+        <div>공지사항</div>
+        <div>Creators</div>
+        <div>회사소개</div>
+    </footer>
+
+</body>
+</html>

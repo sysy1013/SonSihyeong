@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+}
+#main-content {
+  position: absolute;
+  width: 400px;
+  height: 50px;
+  vertical-align: top;
+  top: 150px;
+  left: 250px;
+}
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+}
+.text-color {
+  color: black;
+  padding-top: 30px;
+  margin-left: 50px;
+}
+
+.center-align {
+  margin: 0 auto;
+  width: 1400px;
+}
+
+#menu img {
+  width: 32px;
+  height: 32px;
+  margin-left: 155px;
+  display: inline-block;
+  position: relative;
+  top: 10px;
+}
+
+#menu {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#menu span {
+  padding: 10px;
+}
+
+#search {
+  display: inline-block;
+  width: 240px;
+  height: 38px;
+  margin-left: 60px;
+}
+
+#signup-github {
+  position: absolute;
+  width: 400px;
+  height: 500px;
+  margin-left: 800px;
+  background-color: white;
+  border-radius: 10px;
+  vertical-align: top;
+  top: 60px;
+}
+
+.box-set {
+  padding-left: 50px;
+}
+#signin {
+  width: 50px;
+  height: 38px;
+  color: white;
+  background-color: transparent;
+  border-color: none;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+#signup {
+  width: 53px;
+  height: 38px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 8px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.text {
+  color: black;
+  width: 300px;
+  padding-top: 30px;
+  margin-left: 50px;
+  font-size: 11px;
+}
+
+#register-form {
+  padding: 20px;
+  width: 300px;
+  height: 60px;
+  position: relative;
+  left: 50px;
+  top: 20px;
+  background-color: #228b22;
+  border-radius: 5px;
+}
+
+#register-form > a {
+  color: white;
+  text-decoration: none;
+  margin-left: 60px;
+}
+
+#title {
+  font-size: 50px;
+}
+#content {
+  font-size: 17px;
+}
