@@ -21,6 +21,7 @@ while True:
     if total > 31:
         for i in range(temp, 32):
             print(f'player A: {i}')
+        print("Computer win!")
         break
 
     for i in range(temp, A_count):
@@ -44,6 +45,7 @@ while True:
     if total > 31:
         for i in range(temp, 32):
             print(f'playerB : {i+1}')
+        print("playerA win!")
         break
 
     for i in range(temp, b_count):
