@@ -1,4 +1,3 @@
-
 # 딕셔너리 버전...
 
 # menu 1
@@ -93,8 +92,8 @@ while True:
         try:
             Menu2()
 
-            if len(student) == None:
-                raise IndexError
+            if len(student) == 0:
+                raise ValueError
             if len(student) > 0:
                 raise IndexError
         except IndexError:
@@ -106,13 +105,14 @@ while True:
         # 예외사항 처리(저장된 학생 정보의 유무, 저장되어 있는 학생들의 학점이 모두 부여되어 있는지)
         # 예외사항이 아닌 경우 3번 함수 호출
         try:
+            if len(student) == 0:
+                raise ValueError
+            for i in list(student.values()):
+                if len(i) != 3:
+                    raise IndexError
+                else:
+                    continue
             Menu3()
-
-            if student == None:
-                ValueError
-            if len(student) < 2:
-                IndexError
-
         except ValueError:
             print("No student Data!")
         except IndexError:
@@ -124,15 +124,15 @@ while True:
         # 입력 받은 학생의 존재 유무 체크 후, 없으면 "Not exist name!" 출력
         # 있으면(예를 들어 kim 이라 하면), 4번 함수 호출 후에 "kim student information is
         try:
+            if len(student) == 0:
+                raise IndexError
+
             del_student = input("Enter the name to delete ")
 
             if del_student in student:
                 Menu4(del_student)
             else:
                 raise TypeError
-
-            if len(student) < 0:
-                raise IndexError
 
         except TypeError:
             print("Not exist name")
@@ -148,7 +148,7 @@ while True:
         print("Wrong number. Choose again")
 
 
-# 리스트로 만든 버전....
+# 리스트는 시간이 남아서.. 평가는 위에 코드로 해주십시오....ㅠ
 # menu 1
 """from typing import Type
 
