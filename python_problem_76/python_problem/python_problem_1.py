@@ -22,7 +22,7 @@ while True:
         for i in range(temp, 32):
             print(f'player A: {i}')
         print("playerB win!")
-        break
+        exit()
 
     for i in range(temp, A_count):
         print(f'player A : {i+1}')
@@ -46,8 +46,9 @@ while True:
         for i in range(temp, 32):
             print(f'playerB : {i+1}')
         print("playerA win!")
-        break
+        exit()
 
     for i in range(temp, b_count):
         print(f'playerB: {i+1}')
     temp = b_count
+3
