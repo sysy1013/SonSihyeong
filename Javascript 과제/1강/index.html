@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+
+  <div class="keys"> <!--해당 class를 사용하여 아래 audio와 연결해준다.-->
+    <div data-key="65" class="key"> <!--해당 data-key의 경우는 html5부터 도입된 data-set으로 data-key 속성은 위의 div 태그와 audio태그를 하나로 묶어주는 속성이라고 할 수 있다.-->
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+  </div>
+
+  <audio data-key="65" src="C:\Users\Si Hyeong\hard\Javascript 과제\1강\sound/clap.wav"></audio>
+  <audio data-key="83" src="C:\Users\Si Hyeong\hard\Javascript 과제\1강\sound/hihat.wav"></audio>
+  <audio data-key="68" src="C:\Users\Si Hyeong\hard\Javascript 과제\1강\sound/kick.wav"></audio>
+  <audio data-key="70" src="C:\Users\Si Hyeong\hard\Javascript 과제\1강\sound/openhat.wav"></audio>
+  <audio data-key="71" src="C:\Users\Si Hyeong\hard\Javascript 과제\1강\sound/boom.wav"></audio>
+  <audio data-key="72" src="C:\Users\Si Hyeong\hard\Javascript 과제\1강\sound/ride.wav"></audio>
+  <audio data-key="74" src="C:\Users\Si Hyeong\hard\Javascript 과제\1강\sound/snare.wav"></audio>
+  <audio data-key="75" src="C:\Users\Si Hyeong\hard\Javascript 과제\1강\sound/tom.wav"></audio>
+  <audio data-key="76" src="C:\Users\Si Hyeong\hard\Javascript 과제\1강\sound/tink.wav"></audio>
+
+<script>
+
+    function playsound(e){
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`) 
+      const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+      /*수 많은 자료들중 하나만 찾을때 querySelector 사용! 다 찾을땐 querySelectorAll 사용한다.*/ 
+      /* audio 뒤에 data-key를 사용하는이유는 html에서 audio 태그에 class를 따로 사용하지 않기 위해서 위와같이 작성을 하였다.*/
+      /*data-key 뒤에 변수를 주기위해서 `` 백틱을 사용한후 $표시 후에 중괄호를 닫아서 사용한다*/
+      if(!audio) return;
+
+      audio.currentTime= 0; /*해당 구문을 넣어줌으로써 audio의 재생 시간을 줄인다.*/
+      audio.play();
+    
+      key.classList.add('playing') /*실행했을때 크기를 키워주는 효과*/
+    }
+
+  function removeTransition(e){
+    if(e.propertyName !== 'transform') return;
+
+    console.log(e.propertyName);
+    this.classList.remove('playing');
+    /*this 는 호출된것과같은것을 의미한다. c++에 this와 유사*/
+  }
+  /*언제 색이 변하고 크기가 변하는지를 아래에서 설정해준다.
+  위에서 사용하는게 아니라 해당 구문을 벗어나서 사용하는 이유는 해당 const가 여러곳에서 수신하기를 위해서이다!*/
+  const keys = document.querySelectorAll('.key');
+
+  /*아래 구문은 각각의 이벤트가 서로 다르게 종료가 되므로 forEach를 사용하는것이다!*/
+  /*또한 foreach의 경우 for 반복문과 기능이 유사하다.*/
+
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+  window.addEventListener('keydown', playsound);
+</script>
+</body>
+</html>
