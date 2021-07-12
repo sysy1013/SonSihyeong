@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="6강.css">
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+<script>
+const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+
+let cities = [] //const의 경우 변하지않으므로 const 에서 let으로 바꿔준다. 
+
+fetch(endpoint)
+    .then(blob => blob.json()) //json 데이터를 가져오고
+    .then(data => cities.push(...data)) //바뀐 데이터를 cities라는 리스트에 집어넣는다.
+//위의 fetch는 가져오기 라는 뜻으로 api를 가져오는 역할을한다.
+
+
+function findMatches(wordToMatch, cities){
+  return cities.filter(place => {
+    //return place.city.match(/wordToMatch/i) // 해당구문은 많은 정보중에서 내가 input 칸에 입력한 단어를 찾게하는 구문
+    const regex = new RegExp(wordToMatch, 'gi');
+    return place.city.match(regex) || place.state.match(regex)
+    //regExp 생성자는 패턴을 사용해 텍스트를 판별할 때 사용한다. 
+    //new RegExp(/ab+c/, 'i') 리터럴 -> 매개변수는 두 빗금으로 감싸야 하며 따옴표를 사용하지 않습니다.
+    //new RegExp('ab+c','i') 생성자 ->매개변수는 빗금으로 감싸지 않으나 따옴표를 사용한다.
+  });
+}
+
+function numberwithCommas(x){
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}//인구수 쉼표를 넣어주는것. 3개 나올때마다 ,를 넣어준다.
+
+function displayMatches(){
+  const matchArray = findMatches(this.value, cities);
+  //console.log(matchArray);
+
+  const html = matchArray.map(place => {
+    const regex = new RegExp(this.value, 'gi')
+    const cityName = place.city.replace(regex, `<span class="h1">${this.value}</span>`);
+    const stateName = place.state.replace(regex, `<span class="h1">${this.value}</span>`);
+    return `
+      <li>
+        <span class="name">${cityName}, ${stateName.state}</span> <!--도시와 주를 나타내주는 span-->
+        <span class="name">${numberwithCommas(place.population)}</span> <!--인구수를 나타내주는 span-->
+      </li>
+    `;
+  }).join(''); // join을 사용함으로써 여러배열이 있는 배열로 바뀐다.
+  suggestions.innerHTML = html;
+}
+
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
+
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
+
+</script>
+</body>
+</html>
